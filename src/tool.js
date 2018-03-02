@@ -1,12 +1,13 @@
+const Utils = require('apex-util');
+
 exports.genURL = (urlLength) => {
-  var urlString = "";
-  const sourceLetters = "ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789";
+  let urlString = '';
+  const sourceLetters = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
 
-  for (var genLoopIndex = 0; genLoopIndex < urlLength; genLoopIndex++) {
-
+  for (let genLoopIndex = 0; genLoopIndex < urlLength; genLoopIndex += 1) {
     // Add a random letter to the urlString
-    urlString += sourceLetters.charAt(Math.random() * (sourceLetters.length - 1))
+    urlString += sourceLetters.charAt(Math.random() * (sourceLetters.length - 1));
   }
-  console.log(sourceLetters.length);
-  return urlString
-}
+  Utils.log('sourceLetters length', sourceLetters.length, 3);
+  return urlString;
+};
